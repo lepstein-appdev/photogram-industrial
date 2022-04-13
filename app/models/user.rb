@@ -33,4 +33,9 @@ class User < ApplicationRecord
   has_many :accepted_recieved_follow_requests, -> { where(status: "accepted")}, foreign_key: :recipient_id, class_name: "FollowRequest"
   has_many :leaders, through: :accepted_sent_follow_requests, source: :recipient
 
+  has_many :followers, through: :accepted_recieved_follow_requests, source: :sender
+
+  has_many :feed, through: :leaders, source: :own_photos
+  has_many :discover, through: :leaders, source: :liked_photos
+
  end
