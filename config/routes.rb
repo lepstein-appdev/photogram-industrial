@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: "photos#index"
-
+  
+  devise_for :users
   resources :users, only: :show
 
-  devise_for :users
 
   resources :likes
   resources :follow_requests
