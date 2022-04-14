@@ -12,6 +12,7 @@ task sample_data: :environment do
   usernames = Array.new {Faker::Name.first_name}
   usernames << "alice"
   usernames << "bob"
+  12.times do usernames << Faker::Name.first_name end
   
   usernames.each do |username|
     name = Faker::Name.first_name

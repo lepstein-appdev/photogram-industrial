@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: "photos#index"
 
+  #get "/users/:id" => 
+
   devise_for :users
 
   resources :likes
