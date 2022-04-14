@@ -2,8 +2,6 @@
 <div class="col-md-6 offset-md-3">
 <h1> <%= @user.username %> </h1>
 
-<%= current_user.own_photos.count %>
-
 <ul class="nav nav-pills nav-justified">
 
   <li class="nav-item">
@@ -27,8 +25,8 @@
 
 
 
-
-<% current_user.own_photos.each do |photo| %>
+<%= current_user.liked_photos.count %>
+<% current_user.liked_photos.each do |photo| %>
 
 <div class="row mb-4">
   <div class="col-md-6 offset-md-3">

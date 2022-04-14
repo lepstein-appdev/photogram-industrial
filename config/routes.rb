@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root to: "photos#index"
-  
+
   devise_for :users
-  resources :users, only: :show
+  #resources :users, only: :show
 
 
   resources :likes
@@ -10,11 +10,8 @@ Rails.application.routes.draw do
   resources :comments
   resources :photos
   
+get ":username/liked" => "photos#liked", as: :liked_photos
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
- # root to: "home#index"
-
- get "/:username" => "users#show"
+get ":username" => "users#show", as: :user
 
 end
