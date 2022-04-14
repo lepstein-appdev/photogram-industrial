@@ -1,5 +1,4 @@
 task sample_data: :environment do
-  task example_sample_data: :environment do
     starting = Time.now
   
     FollowRequest.delete_all
