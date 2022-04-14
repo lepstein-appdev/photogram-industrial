@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root to: "photos#index"
 
-  #get "/users/:id" => 
+  #get "/users/:id" => "users#show", as: :user
+  resources :users, only: :show
 
   devise_for :users
 
