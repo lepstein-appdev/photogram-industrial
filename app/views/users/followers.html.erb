@@ -1,1 +1,14 @@
 <%= render "shared/toolbar" %>
+
+
+<div class="row">
+<div class="col-md-6 offset-md-3">
+<div class="list-group">
+
+<% current_user.followers.each do |follower| %>
+  <button type="button" class="list-group-item list-group-item-action"> <%= follower.username %></button>
+  <% end %>
+</div>
+</div>
+</div>
+
