@@ -1,7 +1,9 @@
 <%= render "shared/toolbar" %>
 
+<div>
 <h1> discover </h1>
 <h2> posts liked by people you follow </h2>
+</div>
 
 <% current_user.discover.each do |photo| %>
 <%= render "photos/photo", photo: photo %>
